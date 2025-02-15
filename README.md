@@ -2,6 +2,8 @@
 
 [_Curso de Udemy_](https://www.udemy.com/course/crea-tu-propia-app-mensajeria-desde-cero/?couponCode=KEEPLEARNING)
 
+Este repositorio comprende el capítulo 64 en adelante del curso. Cada commit se corresponde a un capítulo en específico, pudiendo haber algunas excepciones. Para los capítulos anteriores, que corresponden al lado servidor, ir a este repositorio: [chatapp-server](https://github.com/aghmnl/chatapp-server)
+
 ## Lado cliente
 
 Éste es el código del curso tal como fue dado con muy pequeños cambios. Como el repositorio está disponible de forma pública, hago lo mismo con este repositorio. El código original se encuentra en [react-native-whatsapp](https://github.com/xAgustin93/react-native-whatsapp) y fue creado por [Agustín Navarro Galdón](https://www.linkedin.com/in/agustin93/)
@@ -18,7 +20,13 @@ Las versiones se pueden ver en: [npm npx create-expo-app](https://www.npmjs.com/
 
 ### Cómo instalar el cliente
 
-Para instalar el código correctamente en la Mac hacer
+Para clonar localmente el repositorio:
+
+```
+git clone https://github.com/aghmnl/chatapp-client.git
+```
+
+Para instalar el código correctamente ir a la carpeta recién creada:
 
 ```
 yarn install
