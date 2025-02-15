@@ -11,31 +11,43 @@
 La versión que se usa en el curso claramente no es la última (3.2.0 al escribir este readme). A tal punto que la última usa Typescript en vez de Javascript. Por eso el comando utlizado para la instalación en mi caso fue:
 
 ```
-npx create-expo-app@2.3.0 server
+npx create-expo-app@2.3.0 client
 ```
 
 Las versiones se pueden ver en: [npm npx create-expo-app](https://www.npmjs.com/package/create-expo-app/v/1.1.5?activeTab=versions)
 
-### Cómo correr el cliente en un browser
+### Cómo instalar el cliente
+
+Para instalar el código correctamente en la Mac hacer
+
+```
+yarn install
+```
+
+Es necesario tener Expo instalado y también un emulador o un celular para ver corriendo la app.
 
 ### Dependencies versions
 
 Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las dependencias utilizadas con las versiones correspondientes para evitar problemas de compatibilidades
 
-- npm 8.5.5
-- node 18.12.1
+- npm 8.5.5 (yo utilizo 10.8.2)
+- node 18.12.1 (yo utilizo 18.20.6)
 - yarn 1.22.19
 - create-expo-app Creo que usa una versión cercana a la 2.3.0
-- express.js 4.18.2
-- socket.io 4.5.4
-- mongoose 6.8.0
-- body-parser 1.20.1
-- cors 2.8.5
-- morgan 1.10.0
-- nodemon 2.0.20
-- bcryptjs 2.4.3
-- jsonwebtoken 8.5.1
-- connect-multiparty 2.2.0
+- babel 7.12.9
+- @react-navigation 6.x
+- @react-navigation/native 6.x
+- @react-navigation/bottom-tabs 6.x
+- expo 47.0.9 (yo utilizo 52.0.35)
+- expo-status-bar 1.4.2 (yo utilizo 2.0.1)
+- react 18.1.0 (yo utilizo 18.3.1)
+- (aunque no lo menciona, yo utilizo react-dom 19.0.0)
+- react-native 0.70.5 (yo utilizo 0.76.7)
+- (aunque no lo utiliza, yo instalé eslint 9.20.1)
+- native-base 3.4.28
+- react-native-svg 12.1.1 (yo utilizo 15.8.0)
+- react-native-safe-area-context 3.3.2 (yo utilizo 4.12.0)
+- expo-cli 6.0.8 (yo utilizo 6.3.10)
 
 ### ESLint
 
