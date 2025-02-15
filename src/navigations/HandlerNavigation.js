@@ -1,18 +1,12 @@
 import React from "react";
+import { AuthNavigation } from "./stacks";
 import { View, Text } from "react-native";
+import { marginTop } from "../utils";
 
 function AppNavigation() {
   return (
-    <View>
+    <View style={marginTop}>
       <Text>AppNavigation</Text>
-    </View>
-  );
-}
-
-function AuthNavigation() {
-  return (
-    <View>
-      <Text>AuthNavigation</Text>
     </View>
   );
 }
