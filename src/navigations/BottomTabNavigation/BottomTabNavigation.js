@@ -28,17 +28,10 @@ export function BottomTabNavigation() {
 }
 
 function screenIcon(route, color, size) {
-  let iconName;
-
-  if (route.name === screens.tab.chats.root) {
-    iconName = "chat";
-  }
-  if (route.name === screens.tab.groups.root) {
-    iconName = "account-group";
-  }
-  if (route.name === screens.tab.settings.root) {
-    iconName = "cog-outline";
-  }
-
-  return <Icon as={MaterialCommunityIcons} name={iconName} color={color} size={size} />;
+  const iconMap = {
+    [screens.tab.chats.root]: "chat",
+    [screens.tab.groups.root]: "account-group",
+    [screens.tab.settings.root]: "cog-outline",
+  };
+  return <Icon as={MaterialCommunityIcons} name={iconMap[route.name]} color={color} size={size} />;
 }
