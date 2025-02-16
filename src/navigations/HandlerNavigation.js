@@ -1,18 +1,9 @@
 import React from "react";
 import { AuthNavigation } from "./stacks";
-import { View, Text } from "react-native";
-import { styles } from "../navigations";
-
-function AppNavigation() {
-  return (
-    <View style={styles.marginTop}>
-      <Text>AppNavigation</Text>
-    </View>
-  );
-}
+import { AppNavigation } from "../navigations";
 
 export function HandlerNavigation() {
-  const user = null;
+  const user = "agus";
 
   return user ? <AppNavigation /> : <AuthNavigation />;
 }
