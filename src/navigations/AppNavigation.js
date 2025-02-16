@@ -1,10 +1,13 @@
-import { View, Text } from "react-native";
-import { styles } from "../navigations";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { BottomTabNavigation } from "./BottomTabNavigation";
+import { screens } from "../utils";
+
+const Stack = createNativeStackNavigator();
 
 export function AppNavigation() {
   return (
-    <View style={styles.marginTop}>
-      <Text>AppNavigation external file...</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name={screens.tab.root} component={BottomTabNavigation} options={{ headerShown: false }} />
+    </Stack.Navigator>
   );
 }
