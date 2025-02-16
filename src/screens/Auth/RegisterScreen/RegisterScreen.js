@@ -1,10 +1,20 @@
-import React from "react";
 import { View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { styles } from "./RegisterScreen.styles";
 
 export function RegisterScreen() {
+  const navigation = useNavigation();
+
   return (
-    <View>
-      <Text>RegisterScreen</Text>
+    <View style={styles.content}>
+      <Text style={styles.title}>Crea tu cuenta y empieza a enviar mensajes</Text>
+
+      {/* <RegisterForm /> */}
+      <Text style={{ color: "#fff" }}>RegisterForm</Text>
+
+      <Text style={styles.register} onPress={navigation.goBack}>
+        Iniciar sesión
+      </Text>
     </View>
   );
 }
