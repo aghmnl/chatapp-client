@@ -5,7 +5,7 @@ import { styles } from "../../../navigations";
 export function AuthStartScreen() {
   return (
     <View style={styles.marginTop}>
-      <Text>AuthStartScreen</Text>
+      <Text style={{ color: "#fff" }}>AuthStartScreen</Text>
     </View>
   );
 }

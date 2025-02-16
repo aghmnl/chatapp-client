@@ -3,7 +3,7 @@ import { AuthNavigation } from "./stacks";
 import { AppNavigation } from "../navigations";
 
 export function HandlerNavigation() {
-  const user = "agus";
+  const user = null;
 
   return user ? <AppNavigation /> : <AuthNavigation />;
 }
