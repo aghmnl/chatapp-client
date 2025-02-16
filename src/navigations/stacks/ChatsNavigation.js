@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ChatsScreen, CreateChatScreen } from "../../screens/Chats";
 import { screens } from "../../utils";
-import { styles } from "../../navigations";
+import { styles } from "../../navigations/Styles.styles";
 
 const Stack = createNativeStackNavigator();
 

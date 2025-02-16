@@ -4,7 +4,7 @@ import { UserProfileScreen, CameraScreen, ImageFullScreen } from "../screens/Glo
 import { ChatScreen } from "../screens/Chats";
 import { GroupScreen, GroupProfileScreen, AddUserGroupScreen, ChangeNameGroupScreen } from "../screens/Groups";
 import { screens } from "../utils";
-import { styles } from "../navigations";
+import { styles } from "../navigations/Styles.styles";
 
 const Stack = createNativeStackNavigator();
 

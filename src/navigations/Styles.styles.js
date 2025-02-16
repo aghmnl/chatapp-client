@@ -23,7 +23,4 @@ export const styles = new StyleSheet.create({
       color: "#fff",
     },
   },
-  marginTop: {
-    marginTop: 50,
-  },
 });

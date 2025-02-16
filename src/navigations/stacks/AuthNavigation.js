@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthStartScreen, LoginScreen, RegisterScreen } from "../../screens/Auth";
 import { IconBack } from "../../components/Navigation";
 import { screens } from "../../utils";
-import { styles } from "../../navigations";
+import { styles } from "../../navigations/Styles.styles";
 
 const Stack = createNativeStackNavigator();
 
