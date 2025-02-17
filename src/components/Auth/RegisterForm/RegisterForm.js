@@ -1,16 +1,27 @@
 import { View } from "react-native";
 import { Input, Button } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
+import { Auth } from "../../../api";
 import { initialValues, validationSchema } from "./RegisterForm.form";
 import { styles } from "./RegisterForm.styles";
 
+const authController = new Auth();
+
 export function RegisterForm() {
+  const navigation = useNavigation();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
-      console.log(formValue);
+      try {
+        await authController.register(formValue.email, formValue.password);
+        navigation.goBack();
+      } catch (error) {
+        console.error(error);
+      }
     },
   });
 
