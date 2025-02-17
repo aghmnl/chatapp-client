@@ -2,12 +2,15 @@ import { View } from "react-native";
 import { Input, Button } from "native-base";
 import { useFormik } from "formik";
 import { Auth } from "../../../api";
+import { useAuth } from "../../../hooks";
 import { initialValues, validationSchema } from "./LoginForm.form";
 import { styles } from "./LoginForm.styles";
 
 const authController = new Auth();
 
 export function LoginForm() {
+  const { login } = useAuth();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
@@ -16,6 +19,9 @@ export function LoginForm() {
       try {
         const response = await authController.login(formValue.email, formValue.password);
         console.log(response);
+
+        const { access, refresh } = response;
+        await login(access);
       } catch (error) {
         console.error(error);
       }
