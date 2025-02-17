@@ -51,12 +51,14 @@ Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las d
 - react 18.1.0 (yo utilizo 18.3.1)
 - (aunque no lo menciona, yo utilizo react-dom 19.0.0)
 - react-native 0.70.5 (yo utilizo 0.76.7)
-- (aunque no lo utiliza, yo instalé eslint 9.20.1)
+- (aunque no lo utiliza, yo instalé ESLint 9.20.1)
 - native-base 3.4.25 (yo utilizo la 3.4.28)
 - react-native-svg 12.1.1 (yo utilizo 15.8.0)
 - react-native-safe-area-context 3.3.2 (yo utilizo 4.12.0)
 - expo-cli 6.0.8 (yo utilizo 6.3.10)
 - @expo/vector-icons 13.0.0
+- formik 2.2.9
+- yup 0.32.11
 
 ### ESLint
 
