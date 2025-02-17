@@ -1,8 +1,11 @@
 import { View } from "react-native";
 import { Input, Button } from "native-base";
 import { useFormik } from "formik";
+import { Auth } from "../../../api";
 import { initialValues, validationSchema } from "./LoginForm.form";
 import { styles } from "./LoginForm.styles";
+
+const authController = new Auth();
 
 export function LoginForm() {
   const formik = useFormik({
@@ -10,7 +13,12 @@ export function LoginForm() {
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
-      console.log(formValue);
+      try {
+        const response = await authController.login(formValue.email, formValue.password);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
     },
   });
 
