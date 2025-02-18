@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ENV } from "../utils";
 
 export class Auth {
@@ -35,5 +36,28 @@ export class Auth {
     if (response.status !== 200) throw result;
 
     return result;
+  }
+
+  async refreshAccessToken(refreshToken) {}
+
+  async setAccessToken(token) {
+    await AsyncStorage.setItem(ENV.JWT.ACCESS, token);
+  }
+
+  async getAccessToken() {
+    return await AsyncStorage.getItem(ENV.JWT.ACCESS);
+  }
+
+  async setRefreshToken(token) {
+    await AsyncStorage.setItem(ENV.JWT.REFRESH, token);
+  }
+
+  async getRefreshToken() {
+    return await AsyncStorage.getItem(ENV.JWT.REFRESH);
+  }
+
+  async removeTokens() {
+    await AsyncStorage.removeItem(ENV.JWT.ACCESS);
+    await AsyncStorage.removeItem(ENV.JWT.REFRESH);
   }
 }

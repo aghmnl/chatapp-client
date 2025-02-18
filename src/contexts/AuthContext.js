@@ -1,7 +1,8 @@
 import { useState, useEffect, createContext } from "react";
-import { User } from "../api";
+import { User, Auth } from "../api";
 
 const userController = new User();
+const authController = new Auth();
 
 export const AuthContext = createContext();
 
@@ -13,6 +14,11 @@ export function AuthProvider(props) {
 
   useEffect(() => {
     (async () => {
+      const accessToken = await authController.getAccessToken();
+      const refreshToken = await authController.getRefreshToken();
+      console.log("accessToken", accessToken);
+      console.log("refreshToken", refreshToken);
+
       setLoading(false);
     })();
   }, []);

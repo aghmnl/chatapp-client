@@ -34,6 +34,12 @@ yarn install
 
 Es necesario tener Expo instalado y también un emulador o un celular para ver corriendo la app.
 
+Para correr Expo se utiliza
+
+```
+yarn start
+```
+
 ### Dependencies versions
 
 Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las dependencias utilizadas con las versiones correspondientes para evitar problemas de compatibilidades
@@ -59,6 +65,7 @@ Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las d
 - @expo/vector-icons 13.0.0
 - formik 2.2.9
 - yup 0.32.11
+- @react-native-async-storage/async-storage 1.17.11 (yo utilizo 2.1.1)
 
 ### ESLint
 
