@@ -3,8 +3,10 @@ import { BottomTabNavigation } from "./BottomTabNavigation";
 import { UserProfileScreen, CameraScreen, ImageFullScreen } from "../screens/Global";
 import { ChatScreen } from "../screens/Chats";
 import { GroupScreen, GroupProfileScreen, AddUserGroupScreen, ChangeNameGroupScreen } from "../screens/Groups";
-import { screens } from "../utils";
+import { screens, initSockets } from "../utils";
 import { styles } from "../navigations/Styles.styles";
+
+initSockets();
 
 const Stack = createNativeStackNavigator();
 
