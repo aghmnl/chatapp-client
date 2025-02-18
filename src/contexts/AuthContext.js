@@ -53,8 +53,11 @@ export function AuthProvider(props) {
     }
   };
 
-  const logout = () => {};
-
+  const logout = () => {
+    setUser(null);
+    setToken(null);
+    authController.removeTokens();
+  };
   const updateUser = (key, value) => {};
 
   const data = { accessToken: token, user, login, logout, updateUser };
