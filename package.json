@@ -16,6 +16,7 @@
     "@react-navigation/native": "6.x",
     "@react-navigation/native-stack": "6.x",
     "expo": "~52.0.35",
+    "expo-image-picker": "^16.0.6",
     "expo-status-bar": "~2.0.1",
     "formik": "2.2.9",
     "jwt-decode": "3.1.2",

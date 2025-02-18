@@ -44,8 +44,8 @@ yarn start
 
 Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las dependencias utilizadas con las versiones correspondientes para evitar problemas de compatibilidades
 
-- npm 8.5.5 (yo utilizo 10.8.2)
-- node 18.12.1 (yo utilizo 18.20.6)
+- npm 8.5.5
+- node 18.12.1 (yo utilizo 22.11.0)
 - yarn 1.22.19
 - create-expo-app Creo que usa una versión cercana a la 2.3.0
 - babel 7.12.9
@@ -68,6 +68,7 @@ Ya que el curso no está actualizado, me tomé el esfuerzo de anotar todas las d
 - @react-native-async-storage/async-storage 1.17.11 (yo utilizo 2.1.1)
 - jwt-decode 3.1.2
 - socket.io-client 4.5.4
+- expo-image-picker 14.0.2 (yo utilizo la 16.0.6)
 
 ### ESLint
 
