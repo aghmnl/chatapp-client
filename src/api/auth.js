@@ -6,9 +6,7 @@ export class Auth {
     const url = `${ENV.API_URL}/${ENV.ENDPOINTS.AUTH.REGISTER}`;
     const params = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     };
 
@@ -24,9 +22,7 @@ export class Auth {
     const url = `${ENV.API_URL}/${ENV.ENDPOINTS.AUTH.LOGIN}`;
     const params = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     };
 
@@ -38,7 +34,21 @@ export class Auth {
     return result;
   }
 
-  async refreshAccessToken(refreshToken) {}
+  async refreshAccessToken(refreshToken) {
+    const url = `${ENV.API_URL}/${ENV.ENDPOINTS.AUTH.REFRESH_ACCESS_TOKEN}`;
+    const params = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refreshToken }),
+    };
+
+    const response = await fetch(url, params);
+    const result = await response.json();
+
+    if (response.status !== 200) throw result;
+
+    return result;
+  }
 
   async setAccessToken(token) {
     await AsyncStorage.setItem(ENV.JWT.ACCESS, token);
