@@ -66,7 +66,10 @@ export function AuthProvider(props) {
     setToken(null);
     authController.removeTokens();
   };
-  const updateUser = (key, value) => {};
+
+  const updateUser = (key, value) => {
+    setUser({ ...user, [key]: value });
+  };
 
   const data = { accessToken: token, user, login, logout, updateUser };
 
