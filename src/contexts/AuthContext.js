@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 import { User, Auth } from "../api";
+import { hasExpiredToken } from "../utils";
 
 const userController = new User();
 const authController = new Auth();
@@ -16,8 +17,22 @@ export function AuthProvider(props) {
     (async () => {
       const accessToken = await authController.getAccessToken();
       const refreshToken = await authController.getRefreshToken();
-      console.log("accessToken", accessToken);
-      console.log("refreshToken", refreshToken);
+
+      if (!accessToken || !refreshToken) {
+        logout();
+        setLoading(false);
+        return;
+      }
+
+      if (hasExpiredToken(accessToken)) {
+        if (hasExpiredToken(refreshToken)) {
+          logout();
+        } else {
+          reLogin(refreshToken);
+        }
+      } else {
+        await login(accessToken);
+      }
 
       setLoading(false);
     })();
