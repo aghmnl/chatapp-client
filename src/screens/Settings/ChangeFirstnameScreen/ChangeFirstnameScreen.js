@@ -1,10 +1,12 @@
-import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { Input, Button } from "native-base";
+import { styles } from "./ChangeFirstnameScreen.styles";
 
 export function ChangeFirstnameScreen() {
   return (
-    <View>
-      <Text>ChangeFirstnameScreen</Text>
+    <View style={styles.content}>
+      <Input placeholder="Nombre" variant="unstyled" autoFocus style={styles.input} />
+      <Button style={styles.btn}>Cambiar</Button>
     </View>
   );
 }
