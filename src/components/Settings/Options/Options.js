@@ -1,8 +1,9 @@
 import { View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { User } from "../../../api";
 import PropTypes from "prop-types";
-import { imageExpoFormat } from "../../../utils";
+import { imageExpoFormat, screens } from "../../../utils";
 import { styles } from "./Options.styles";
 
 Options.propTypes = {
@@ -15,6 +16,7 @@ const userController = new User();
 
 export function Options(props) {
   const { accessToken, logout, updateUser } = props;
+  const navigation = useNavigation();
 
   const openGallery = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -38,17 +40,25 @@ export function Options(props) {
     }
   };
 
+  const goChangeFirstname = () => {
+    navigation.navigate(screens.tab.settings.changeFirstnameScreen);
+  };
+
+  const goChangeLastname = () => {
+    navigation.navigate(screens.tab.settings.changeLastnameScreen);
+  };
+
   return (
     <View style={styles.content}>
       <TouchableOpacity style={styles.item} onPress={openGallery}>
         <Text style={styles.text}>Cambiar foto de perfil</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={goChangeFirstname}>
         <Text style={styles.text}>Cambiar nombre</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={goChangeLastname}>
         <Text style={styles.text}>Cambiar apellidos</Text>
       </TouchableOpacity>
 
