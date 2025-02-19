@@ -12,4 +12,21 @@ export class User {
 
     return result;
   }
+
+  async updateUser(accessToken, userData) {
+    const data = userData;
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+    const url = `${ENV.API_URL}/${ENV.ENDPOINTS.ME}`;
+    const params = { method: "PATCH", headers: { Authorization: `Bearer ${accessToken}` }, body: formData };
+
+    const response = await fetch(url, params);
+    const result = await response.json();
+
+    if (response.status !== 200) throw result;
+
+    return result;
+  }
 }
