@@ -1,17 +1,28 @@
 import { View } from "react-native";
 import { Input, Button } from "native-base";
 import { useFormik } from "formik";
+import { useNavigation } from "@react-navigation/native";
+import { User } from "../../../api";
+import { useAuth } from "../../../hooks";
 import { initialValues, validationSchema } from "./ChangeFirstnameScreen.form";
 import { styles } from "./ChangeFirstnameScreen.styles";
 
+const userController = new User();
+
 export function ChangeFirstnameScreen() {
+  const navigation = useNavigation();
+  const { accessToken, updateUser } = useAuth();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        console.log(formValue);
+        const dataUser = { firstname: formValue.firstname };
+        await userController.updateUser(accessToken, dataUser);
+        updateUser("firstname", formValue.firstname);
+        navigation.goBack();
       } catch (error) {
         console.error(error);
       }
