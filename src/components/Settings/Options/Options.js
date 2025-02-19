@@ -32,6 +32,7 @@ export function Options(props) {
   const updateUserData = async (userData) => {
     try {
       const response = await userController.updateUser(accessToken, userData);
+      updateUser("avatar", response.avatar);
     } catch (error) {
       console.error(error);
     }
